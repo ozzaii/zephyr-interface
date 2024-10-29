@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zephyr Interface</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Avatar and Chat Section -->
+            <div class="bg-gray-800 rounded-lg p-6">
+                <div id="avatar-container" class="h-64 flex items-center justify-center mb-4">
+                    <!-- Avatar canvas will be inserted here -->
+                </div>
+                <div id="chat-container" class="h-96 overflow-y-auto bg-gray-700 rounded-lg p-4 mb-4">
+                    <!-- Chat messages will appear here -->
+                </div>
+                <div class="flex gap-4">
+                    <button id="start-voice" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg">
+                        Start Voice
+                    </button>
+                    <input type="text" id="text-input" class="flex-1 bg-gray-700 rounded-lg px-4 py-2">
+                    <button id="send-text" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg">
+                        Send
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Data Visualization Section -->
+            <div class="bg-gray-800 rounded-lg p-6">
+                <div id="charts-container" class="h-full">
+                    <!-- Charts will be rendered here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/recharts/2.1.9/Recharts.js"></script>
+    <script src="scripts/audio.js"></script>
+    <script src="scripts/avatar.js"></script>
+    <script src="scripts/charts.js"></script>
+    <script src="scripts/api.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
