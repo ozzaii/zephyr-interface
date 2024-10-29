@@ -1,15 +1,14 @@
 // scripts/config.js
 const CONFIG = {
-    NGROK_URL: null, // We'll set this when you have your ngrok URL
-    ELEVENLABS_API_KEY: null, // You'll need to add your API key here
+    NGROK_URL: "https://f70a-34-141-221-133.ngrok-free.app",
     CHAT_SETTINGS: {
         MAX_MESSAGES: 50,
         USER_COLOR: '#3182ce',
         ZEPHYR_COLOR: '#4a5568'
     },
-    AVATAR_SETTINGS: {
-        WIDTH: 400,
-        HEIGHT: 400,
-        FRAMERATE: 60
-    }
+    TRADE_DATA: {
+        UPDATE_INTERVAL: 2000, // 2 seconds
+        MAX_POINTS: 20
+    },
+    WS_RECONNECT_DELAY: 3000
 };
