@@ -5,44 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zephyr Interface</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/6.5.2/browser/pixi.min.js"></script>
 </head>
 <body class="bg-gray-900 text-white">
-    <div class="container mx-auto px-4 py-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <!-- Avatar and Chat Section -->
-            <div class="bg-gray-800 rounded-lg p-6">
-                <div id="avatar-container" class="h-64 flex items-center justify-center mb-4">
-                    <!-- Avatar canvas will be inserted here -->
+    <div class="container mx-auto p-4 min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="text-center mb-4">
+            <h1 class="text-3xl font-bold text-blue-400">Zephyr Interface</h1>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-grow grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Left Column - Avatar and Chat -->
+            <div class="space-y-4">
+                <!-- Avatar Container -->
+                <div id="avatar-container" class="bg-gray-800 rounded-lg p-4 aspect-square">
+                    <!-- PixiJS will render here -->
                 </div>
-                <div id="chat-container" class="h-96 overflow-y-auto bg-gray-700 rounded-lg p-4 mb-4">
-                    <!-- Chat messages will appear here -->
-                </div>
-                <div class="flex gap-4">
-                    <button id="start-voice" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg">
-                        Start Voice
-                    </button>
-                    <input type="text" id="text-input" class="flex-1 bg-gray-700 rounded-lg px-4 py-2">
-                    <button id="send-text" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg">
-                        Send
-                    </button>
+
+                <!-- Chat Interface -->
+                <div class="bg-gray-800 rounded-lg p-4 flex flex-col h-96">
+                    <div id="chat-container" class="flex-grow overflow-y-auto mb-4 space-y-2">
+                        <!-- Chat messages will appear here -->
+                    </div>
+                    <div class="flex gap-2">
+                        <button id="voice-btn" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg flex items-center">
+                            <span class="material-icons">mic</span>
+                        </button>
+                        <input type="text" id="message-input" 
+                               class="flex-grow bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                               placeholder="Type your message...">
+                        <button id="send-btn" class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-lg">
+                            Send
+                        </button>
+                    </div>
                 </div>
             </div>
-            
-            <!-- Data Visualization Section -->
-            <div class="bg-gray-800 rounded-lg p-6">
+
+            <!-- Right Column - Data Visualization -->
+            <div class="bg-gray-800 rounded-lg p-4">
                 <div id="charts-container" class="h-full">
-                    <!-- Charts will be rendered here -->
+                    <!-- Charts will render here -->
                 </div>
             </div>
-        </div>
+        </main>
     </div>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/recharts/2.1.9/Recharts.js"></script>
-    <script src="scripts/audio.js"></script>
-    <script src="scripts/avatar.js"></script>
-    <script src="scripts/charts.js"></script>
+
+    <!-- Scripts -->
+    <script src="scripts/config.js"></script>
     <script src="scripts/api.js"></script>
+    <script src="scripts/avatar.js"></script>
+    <script src="scripts/audio.js"></script>
+    <script src="scripts/charts.js"></script>
     <script src="scripts/main.js"></script>
 </body>
 </html>
